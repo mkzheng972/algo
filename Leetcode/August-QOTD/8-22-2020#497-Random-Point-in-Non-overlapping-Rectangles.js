@@ -27,6 +27,7 @@ var Solution = function(rects) {
         this.sum += ((x2-x1) + 1) * ((y2-y1) + 1)
         this.map.set(this.sum, i)
     }
+    this.arr = [...this.map]
 };
 
 /**
@@ -36,18 +37,17 @@ Solution.prototype.pick = function() {
     
     // get a random index
     const randomKey = Math.ceil(Math.random() * this.sum)
-    const arr = [...this.map]
     let left = 0
-    let right = arr.length-1
+    let right = this.arr.length-1
     while (left < right) {
         let mid = left + Math.floor((right - left) / 2)
-        if (randomKey > arr[mid][0]) {
+        if (randomKey > this.arr[mid][0]) {
             left = mid + 1
         } else {
             right = mid
         }
     }
-    const newIndex = arr[left][1]
+    const newIndex = this.arr[left][1]
     const [x1,y1,x2,y2] = this.rects[newIndex]
     const x3 = Math.floor(Math.random() * (x2 - x1 + 1) + x1)
     const y3 = Math.floor(Math.random() * (y2 - y1 + 1) + y1)
