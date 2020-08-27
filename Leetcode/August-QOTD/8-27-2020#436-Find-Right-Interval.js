@@ -22,6 +22,7 @@ var findRightInterval = function(intervals) {
     
     const output = []
     const map = {}
+    const arr = []
     let highKey = -Infinity
     
     // assign the indexes according to start interval
@@ -34,13 +35,13 @@ var findRightInterval = function(intervals) {
     }
     
     // place key,val into an array for binary search later on
-    let arr = []
     for (let key in map) {
         arr.push([parseInt(key), map[key]])
     }
     arr.sort((a,b) => a[0]-b[0])    // sort the array asc order for binary search
     
-    for (let j = 0; j < intervals.length; j++) {    // get index for each interval
+    // get index for each interval
+    for (let j = 0; j < intervals.length; j++) {
         let [start,end] = intervals[j]
         
         if (map[end] !== undefined) {   // direct end interval match
@@ -54,7 +55,6 @@ var findRightInterval = function(intervals) {
                 let mid = low + Math.floor((high - low) / 2)
                 if (arr[mid][0] >= end) {
                     high = mid
-                    
                 } else {
                     low = mid + 1
                 }
