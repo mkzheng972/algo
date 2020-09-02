@@ -33,7 +33,7 @@ need a visited set
 4. dfs thru each num until you reached the next end point
 */
 
-function makeArr(pairs) {
+function fixArr(pairs) {
   const map = {}    // adj lsit
   const counter = {}    // counter
   for (let pair of pairs) {
@@ -77,4 +77,4 @@ function makeArr(pairs) {
 
 // pairs = [[3,5], [1,4], [2,4], [1,5]]
 // pairs1 = [[2,5],[5,3],[4,1],[1,3],[2,6]]
-// makeArr(pairs1)
+// fixArr(pairs1)
