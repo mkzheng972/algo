@@ -73,9 +73,8 @@ function makeArr(pairs) {
   }
 
   dfs(parseInt(startVal))
-  console.log(output)
 }
 
-pairs = [[3,5], [1,4], [2,4], [1,5]]
-pairs1 = [[2,5],[5,3],[4,1],[1,3],[2,6]]
-makeArr(pairs1)
+// pairs = [[3,5], [1,4], [2,4], [1,5]]
+// pairs1 = [[2,5],[5,3],[4,1],[1,3],[2,6]]
+// makeArr(pairs1)
