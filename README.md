@@ -1,3 +1,3 @@
-# algo
+# Algo
 
 Tracking the Algo Problems
