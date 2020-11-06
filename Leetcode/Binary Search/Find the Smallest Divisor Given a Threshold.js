@@ -21,18 +21,16 @@ var smallestDivisor = function(nums, threshold) {
         }
     }
     
-    let output = 0
     let left = 1
-    let right = Number.MAX_SAFE_INTEGER
+    let right = Math.max(...nums) //Number.MAX_SAFE_INTEGER
     while (left < right) {
+        
         let mid = left + Math.floor((right-left)/2)
         if (under(mid)) {
-            output = mid
             right = mid
         } else {
             left = mid + 1
         }
     }
-    
-    return output
+    return left
 };
