@@ -71,6 +71,7 @@ class LRUCache {
                 beforeTail.next = null
                 this.tail = beforeTail
                 this.map.delete(tailKey)
+                this.size -= 1
             }
         }
     }
