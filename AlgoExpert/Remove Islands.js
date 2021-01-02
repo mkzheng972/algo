@@ -3,8 +3,11 @@ function removeIslands(matrix) {
 	
 	/*
 	
-  time: o(n * m)
-  space: o(n * m) -- worst case call stack space
+	time: o(n * m)
+	space: o(n * m) -- worst case call stack space
+	
+	** trick to this question is to loop thru the border cells first to find non island lands
+	
 	find all the non-island lands (1) first and change the cell value to 2 via dfs
 	traverse the matrix and change the rest of the 1s (island lands) to 0
 	and change back the non-island lands (now 2) back to 1
